@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
+import 'dotenv/config';
 
-mongoose.connect('mongodb://127.0.0.1:27017/api-test-project');
+mongoose.connect(process.env.API_KEY);
+mongoose.set('strictQuery', false);
 
 const db = mongoose.connection;
 
