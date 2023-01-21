@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 const app = express();
 
@@ -7,3 +8,7 @@ const handleListen = () => {
 };
 
 app.listen(8080, handleListen);
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
