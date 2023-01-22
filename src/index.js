@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import { Reset } from 'styled-reset';
 
 import Home from './frontend/Home.js';
-import Join from './frontend/Join.js';
+import JoinWithFetch from './frontend/Join/JoinWithFetch.js';
+import JoinWithXML from './frontend/Join/JoinWithXML.js';
 import Login from './frontend/Login.js';
 
 const HomeBtn = styled.div`
@@ -32,7 +33,8 @@ root.render(
       </Link>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/join" element={<Join />} />
+        {/* <Route path="/join" element={<JoinWithFetch />} /> */}
+        <Route path="/join" element={<JoinWithXML />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
