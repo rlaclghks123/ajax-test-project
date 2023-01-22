@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   }
 `;
 
-function Join() {
+function JoinWithFetch() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -45,7 +45,6 @@ function Join() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application / json',
       },
       body: JSON.stringify({
         nickName: new FormData(e.target).get('nickName'),
@@ -58,16 +57,18 @@ function Join() {
       .then((res) => {
         if (res.status === 400) {
           alert('password was not correct');
-          return navigate('/join');
+          return navigate('/');
         } else if (res.status === 409) {
           alert('username or email was existed');
-          return navigate('/join');
+          return navigate('/');
         }
         return res.json();
       })
       .then((data) => {
-        alert(data.message);
-        return navigate('/');
+        if (data) {
+          alert(data.message);
+          return navigate('/');
+        }
       });
   };
 
@@ -87,4 +88,4 @@ function Join() {
   );
 }
 
-export default Join;
+export default JoinWithFetch;
