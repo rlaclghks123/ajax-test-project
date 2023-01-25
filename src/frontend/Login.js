@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -133,6 +134,25 @@ const Footer = styled.div`
 `;
 
 function Login() {
+  const navigate = useNavigate(null);
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post('http://localhost:8080/login', {
+        username: e.target.username.value,
+        password: e.target.password.value,
+      })
+      .then((response) => {
+        console.log('hi', response);
+        sessionStorage.setItem('loggedIn', response.data.session);
+        navigate('/');
+      })
+      .catch((error) => {
+        console.log('error', error);
+      });
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -142,10 +162,11 @@ function Login() {
           </svg>
         </Link>
       </Header>
+
       <Main>
-        <form>
-          <input placeholder="아이디 또는 이메일"></input>
-          <input placeholder="비밀번호"></input>
+        <form method="POST" onSubmit={handleLoginSubmit}>
+          <input name="username" required placeholder="아이디 또는 이메일"></input>
+          <input name="password" required placeholder="비밀번호"></input>
           <button>로그인</button>
         </form>
         <div>

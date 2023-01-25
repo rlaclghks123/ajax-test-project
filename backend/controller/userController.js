@@ -1,4 +1,5 @@
 import User from '../model/User.js';
+import bcrypt from 'bcrypt';
 
 export const postJoin = async (req, res) => {
   const { nickName, username, email, password, password2 } = req.body;
@@ -22,4 +23,23 @@ export const postJoin = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const postLogin = async (req, res) => {
+  const { username, password } = req.body;
+
+  const user = await User.findOne({ username, socialOnly: false });
+
+  if (!user) {
+    return res.status(400).json({ error: 'Username was not exists' });
+  }
+
+  const ok = await bcrypt.compare(password, user.password);
+  if (!ok) {
+    return res.status(400).json({ error: 'Password was not correct' });
+  }
+  req.session.loggedIn = true;
+  req.session.user = user;
+
+  return res.status(200).json({ message: '로그인 되었습니다.', session: req.session.loggedIn });
 };
