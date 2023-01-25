@@ -4,35 +4,35 @@ import axios from 'axios';
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   form {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     padding: 60px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+
     input {
-      text-align: center;
-      background-color: #d5d6d7;
-      padding: 15px 30px;
+      padding: 15px 50px;
+      margin: 5px 0px;
       border: none;
-      margin: 10px 0px;
-      border: none;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
       outline: none;
-      &::placeholder {
-        color: white;
+      &:focus {
+        border-color: #2ac1bc;
       }
     }
     button {
-      border: none;
-      background-color: #d5d6d7;
-      color: white;
       padding: 15px 30px;
+      margin: 10px 0px;
+      border: none;
+      background-color: #2ac1bc;
+      color: white;
     }
   }
 `;
@@ -63,8 +63,9 @@ function JoinWithAxios() {
 
   return (
     <Wrapper>
+      <label for="join">회원가입</label>
       <form method="POST" onSubmit={handleSubmit}>
-        <input name="nickName" type="text" required placeholder="Nickname"></input>
+        <input name="nickName" type="text" required placeholder="Nickname" id="join"></input>
         <input name="username" type="text" required placeholder="Username"></input>
         <input name="email" type="email" required placeholder="Email"></input>
         <input name="password" type="password" required placeholder="Password"></input>

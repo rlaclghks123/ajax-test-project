@@ -7,35 +7,38 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #efefef;
 `;
 
 const Box = styled.div`
   display: flex;
-  flex-direction: column;
-  padding: 100px 150px;
-  background-color: #d5d6d7;
+  gap: 10px;
+  width: 45%;
+  height: 50%;
+  justify-content: center;
 
   button {
-    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 2px;
+    width: 100%;
+    height: 100%;
+    padding: 150px;
+    border-radius: 15px;
+    font-size: 30px;
     border: none;
-    margin: 50px 0px;
-
-    &:first-child {
-      background-color: beige;
-    }
-    &:last-child {
-      background-color: bisque;
-    }
   }
 `;
 
 function Home() {
+  const loggedIn = sessionStorage.getItem('loggedIn');
   return (
     <Wrapper>
       <Box>
         <Link to="/join">
           <button>회원가입</button>
         </Link>
+      </Box>
+      <Box>
         <Link to="/login">
           <button>로그인</button>
         </Link>
