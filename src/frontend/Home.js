@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Comment from './Comment.js';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -33,16 +34,22 @@ function Home() {
   const loggedIn = sessionStorage.getItem('loggedIn');
   return (
     <Wrapper>
-      <Box>
-        <Link to="/join">
-          <button>회원가입</button>
-        </Link>
-      </Box>
-      <Box>
-        <Link to="/login">
-          <button>로그인</button>
-        </Link>
-      </Box>
+      {loggedIn ? (
+        <Comment />
+      ) : (
+        <>
+          <Box>
+            <Link to="/join">
+              <button>회원가입</button>
+            </Link>
+          </Box>
+          <Box>
+            <Link to="/login">
+              <button>로그인</button>
+            </Link>
+          </Box>
+        </>
+      )}
     </Wrapper>
   );
 }

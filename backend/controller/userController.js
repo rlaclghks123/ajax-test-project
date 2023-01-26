@@ -43,3 +43,8 @@ export const postLogin = async (req, res) => {
 
   return res.status(200).json({ message: '로그인 되었습니다.', session: req.session.loggedIn });
 };
+
+export const getLogout = (req, res) => {
+  req.session.destroy();
+  return res.status(200).json({ message: '로그아웃 되었습니다' });
+};
