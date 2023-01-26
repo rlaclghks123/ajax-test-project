@@ -135,6 +135,7 @@ function Login() {
         navigate('/');
       })
       .catch((error) => {
+        alert(error.response.data.error);
         console.log('error', error);
       });
   };
@@ -143,8 +144,8 @@ function Login() {
     <Wrapper>
       <Main>
         <form method="POST" onSubmit={handleLoginSubmit}>
-          <input name="username" required placeholder="아이디 또는 이메일"></input>
-          <input name="password" required placeholder="비밀번호"></input>
+          <input name="username" type="text" required placeholder="아이디 또는 이메일"></input>
+          <input name="password" type="password" required placeholder="비밀번호"></input>
           <button>로그인</button>
         </form>
         <div>
