@@ -9,29 +9,15 @@ import JoinWithAxios from './frontend/Join/JoinWithAxios.js';
 import JoinWithFetch from './frontend/Join/JoinWithFetch.js';
 import JoinWithXML from './frontend/Join/JoinWithXML.js';
 import Login from './frontend/Login.js';
-
-const HomeBtn = styled.div`
-  display: flex;
-  justify-content: center;
-
-  button {
-    height: 30px;
-    color: black;
-    border: none;
-    margin-top: 30px;
-  }
-`;
+import Nav from './frontend/Nav.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Reset />
-      <Link to="/">
-        <HomeBtn>
-          <button>home</button>
-        </HomeBtn>
-      </Link>
+      <Nav />
+      <Link to="/"></Link>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/join" element={<JoinWithXML />} /> */}

@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 const Header = styled.div`
   width: 100%;
-  padding: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 50px;
   position: fixed;
   top: 0px;
+  background-color: #efefef;
+  z-index: 10;
 
   svg {
     margin-left: 20px;
