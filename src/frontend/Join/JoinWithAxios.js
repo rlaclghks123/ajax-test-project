@@ -63,7 +63,7 @@ function JoinWithAxios() {
 
   return (
     <Wrapper>
-      <label for="join">회원가입</label>
+      <label htmlFor="join">회원가입</label>
       <form method="POST" onSubmit={handleSubmit}>
         <input name="nickName" type="text" required placeholder="Nickname" id="join"></input>
         <input name="username" type="text" required placeholder="Username"></input>
