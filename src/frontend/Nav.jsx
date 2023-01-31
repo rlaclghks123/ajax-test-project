@@ -12,6 +12,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 0px;
 
   svg {
     margin-left: 20px;
@@ -23,6 +24,7 @@ const Header = styled.div`
 `;
 
 const Logout = styled.button`
+  width: 100px;
   outline: none;
   border: none;
   margin-right: 20px;
