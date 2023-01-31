@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Comment from './comments/Comment.js';
+import Notification from './Notificaltion.js';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,7 +35,10 @@ function Home() {
   return (
     <Wrapper>
       {loggedIn ? (
-        <Comment />
+        <>
+          <Notification></Notification>
+          <div>홈 화면입니다</div>
+        </>
       ) : (
         <>
           <Box>

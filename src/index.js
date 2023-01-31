@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import styled from 'styled-components';
 import { Reset } from 'styled-reset';
+import Purchase from './frontend/comments/Purchase.js';
 
 import Home from './frontend/Home.js';
 import JoinWithAxios from './frontend/Join/JoinWithAxios.js';
@@ -22,8 +22,10 @@ root.render(
         <Route path="/" element={<Home />} />
         {/* <Route path="/join" element={<JoinWithXML />} /> */}
         {/* <Route path="/join" element={<JoinWithFetch />} /> */}
+
         <Route path="/join" element={<JoinWithAxios />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/purchase" element={<Purchase />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
