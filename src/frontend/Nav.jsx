@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = styled.div`
@@ -38,7 +38,7 @@ const Logout = styled.button`
 
 function Nav() {
   const loggedIn = sessionStorage.getItem('loggedIn');
-
+  const navigate = useNavigate();
   const handleLogout = (e) => {
     e.preventDefault();
     if (!window.confirm('정말 로그아웃 하시겠습니까?')) return;
@@ -50,6 +50,7 @@ function Nav() {
 
         sessionStorage.removeItem('loggedIn');
         console.log('hi', response);
+        navigate('/');
         return window.location.reload();
       })
       .catch((error) => {
