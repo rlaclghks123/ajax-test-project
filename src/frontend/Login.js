@@ -131,12 +131,13 @@ function Login() {
       })
       .then((response) => {
         console.log('hi', response);
-        sessionStorage.setItem('loggedIn', response.data.session);
+        sessionStorage.setItem('loggedIn', response.data.loggedIn);
+        sessionStorage.setItem('sessionId', response.data.sessionId);
         navigate('/');
+        return window.location.reload();
       })
       .catch((error) => {
         alert(error.response.data.error);
-        console.log('error', error);
       });
   };
 
