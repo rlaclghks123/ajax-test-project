@@ -52,6 +52,7 @@ function JoinWithAxios() {
         password2: e.target.password2.value,
       })
       .then((response) => {
+        console.log(response);
         alert(response.data.message);
         return navigate('/');
       })

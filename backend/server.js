@@ -4,7 +4,14 @@ import 'dotenv/config';
 import cors from 'cors';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
-import { getLogout, postJoin, postLogin } from './controller/userController.js';
+
+import {
+  getLogout,
+  getPurchase,
+  postJoin,
+  postLogin,
+  postPurchase,
+} from './controller/userController.js';
 
 const app = express();
 
@@ -26,6 +33,10 @@ app.use(
   })
 );
 
-app.get('/logout', getLogout);
 app.post('/join', postJoin);
 app.post('/login', postLogin);
+
+app.get('/logout', getLogout);
+
+app.get('/purchase/:id', getPurchase);
+app.post('/purchase/:id', postPurchase);

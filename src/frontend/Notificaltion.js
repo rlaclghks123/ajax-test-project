@@ -27,12 +27,13 @@ const Wrapper = styled.ul`
 `;
 
 function Notification() {
+  const sessionId = sessionStorage.getItem('sessionId');
   return (
     <Wrapper>
       <Link to="/">
         <li>홈</li>
       </Link>
-      <Link to="/purchase">
+      <Link to={`/purchase/${sessionId}`}>
         <li>결제</li>
       </Link>
       <Link to="/kakaoMap">

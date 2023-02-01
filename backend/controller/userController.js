@@ -40,11 +40,38 @@ export const postLogin = async (req, res) => {
   }
   req.session.loggedIn = true;
   req.session.user = user;
+  console.log('controller', req.session);
 
-  return res.status(200).json({ message: '로그인 되었습니다.', session: req.session.loggedIn });
+  return res.status(200).json({
+    message: '로그인 되었습니다.',
+    loggedIn: req.session.loggedIn,
+    sessionId: req.session.user._id,
+    count: req.session.user.count,
+  });
 };
 
 export const getLogout = (req, res) => {
   req.session.destroy();
   return res.status(200).json({ message: '로그아웃 되었습니다' });
+};
+
+export const getPurchase = async (req, res) => {
+  const { id } = req.params;
+  const { count } = await User.findById(id);
+
+  return res.status(200).json({ count });
+};
+
+export const postPurchase = async (req, res) => {
+  const { id, status } = req.body;
+
+  const user = await User.findById(id);
+
+  if (status) {
+    user.count += 1;
+    await user.save();
+    return res.status(200).json({ message: '결제가 완료되었습니다.' });
+  } else {
+    return res.status(400).json({ error: '결제에 실패했습니다.' });
+  }
 };

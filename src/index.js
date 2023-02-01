@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { Reset } from 'styled-reset';
-import Purchase from './frontend/comments/Purchase.js';
+import Purchase from './frontend/Purchase.js';
 
 import Home from './frontend/Home.js';
 import JoinWithAxios from './frontend/Join/JoinWithAxios.js';
@@ -25,7 +25,7 @@ root.render(
 
         <Route path="/join" element={<JoinWithAxios />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/purchase" element={<Purchase />} />
+        <Route path="/purchase/:id" element={<Purchase />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
