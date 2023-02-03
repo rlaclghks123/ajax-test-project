@@ -39,9 +39,6 @@ function Notification() {
       <Link to="/kakaoMap">
         <li>카카오 지도</li>
       </Link>
-      <Link to="/googleMap">
-        <li>구글 지도</li>
-      </Link>
     </Wrapper>
   );
 }

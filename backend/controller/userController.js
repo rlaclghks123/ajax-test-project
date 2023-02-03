@@ -40,7 +40,6 @@ export const postLogin = async (req, res) => {
   }
   req.session.loggedIn = true;
   req.session.user = user;
-  console.log('controller', req.session);
 
   return res.status(200).json({
     message: '로그인 되었습니다.',
