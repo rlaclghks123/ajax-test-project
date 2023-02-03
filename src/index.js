@@ -10,6 +10,7 @@ import JoinWithFetch from './frontend/Join/JoinWithFetch.js';
 import JoinWithXML from './frontend/Join/JoinWithXML.js';
 import Login from './frontend/Login.js';
 import Nav from './frontend/Nav.jsx';
+import KakaoMap from './frontend/KakaoMap.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
         <Route path="/join" element={<JoinWithAxios />} />
         <Route path="/login" element={<Login />} />
         <Route path="/purchase/:id" element={<Purchase />} />
+        <Route path="/kakaoMap" element={<KakaoMap />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
