@@ -50,21 +50,11 @@ function KakaoMap() {
     var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
     const container = document.querySelector('#map');
     const options = {
-      center: new kakao.maps.LatLng(37.566826, 126.9786567),
-      level: 3,
+      center: new kakao.maps.LatLng(35.5461188, 129.2956365),
+      level: 5,
     };
     // 지도 객체 생성
     const map = new kakao.maps.Map(container, options);
-
-    var markerPosition = new kakao.maps.LatLng(37.566826, 126.9786567);
-
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-      position: markerPosition,
-    });
-
-    // 마커가 지도 위에 표시되도록 설정합니다
-    marker.setMap(map);
 
     var ps = new kakao.maps.services.Places();
 
