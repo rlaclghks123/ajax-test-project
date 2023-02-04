@@ -18,7 +18,6 @@ root.render(
     <BrowserRouter>
       <Reset />
       <Nav />
-      <Link to="/"></Link>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/join" element={<JoinWithXML />} /> */}
