@@ -26,8 +26,8 @@ root.render(
 
         <Route path="/join" element={<JoinWithAxios />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/purchase/:id" element={<Purchase />} />
         <Route path="/kakaoMap" element={<KakaoMap />} />
+        <Route path="/purchase/:id" element={<Purchase />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

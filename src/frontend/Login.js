@@ -133,8 +133,7 @@ function Login() {
         console.log('hi', response);
         sessionStorage.setItem('loggedIn', response.data.loggedIn);
         sessionStorage.setItem('sessionId', response.data.sessionId);
-        window.location.reload();
-        return navigate('/');
+        return navigate('/') && window.location.reload();
       })
       .catch((error) => {
         alert(error.response.data.error);
