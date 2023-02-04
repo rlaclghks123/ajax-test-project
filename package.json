@@ -1,5 +1,6 @@
 {
   "name": "api-test-project",
+  "homepage": "https://rlaclghks123.github.io/ajax-test-project",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -30,7 +31,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon babel backend/server.js"
+    "dev": "nodemon babel backend/server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +56,7 @@
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2"
+    "@babel/preset-env": "^7.20.2",
+    "gh-pages": "^5.0.0"
   }
 }
