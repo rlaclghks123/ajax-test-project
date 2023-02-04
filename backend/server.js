@@ -26,10 +26,10 @@ app.use(express.json());
 app.use(cors());
 app.use(
   session({
+    store: MongoStore.create({ mongoUrl: process.env.API_KEY }),
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.API_KEY }),
   })
 );
 
