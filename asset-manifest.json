@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/ajax-test-project/static/js/main.bcbf111b.js",
+    "main.js": "/ajax-test-project/static/js/main.aadd66f1.js",
     "index.html": "/ajax-test-project/index.html",
-    "main.bcbf111b.js.map": "/ajax-test-project/static/js/main.bcbf111b.js.map"
+    "main.aadd66f1.js.map": "/ajax-test-project/static/js/main.aadd66f1.js.map"
   },
   "entrypoints": [
-    "static/js/main.bcbf111b.js"
+    "static/js/main.aadd66f1.js"
   ]
 }
