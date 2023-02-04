@@ -120,7 +120,7 @@ const Footer = styled.div`
 `;
 
 function Login() {
-  const navigate = useNavigate(null);
+  const navigate = useNavigate();
   const handleLoginSubmit = (e) => {
     e.preventDefault();
 
