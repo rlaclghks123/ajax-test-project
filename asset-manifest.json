@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/rlaclghks123.github.io/ajax-test-project/static/js/main.3a8dc7a7.js",
-    "index.html": "/rlaclghks123.github.io/ajax-test-project/index.html",
-    "main.3a8dc7a7.js.map": "/rlaclghks123.github.io/ajax-test-project/static/js/main.3a8dc7a7.js.map"
+    "main.js": "/ajax-test-project/static/js/main.c8d9ecbf.js",
+    "index.html": "/ajax-test-project/index.html",
+    "main.c8d9ecbf.js.map": "/ajax-test-project/static/js/main.c8d9ecbf.js.map"
   },
   "entrypoints": [
-    "static/js/main.3a8dc7a7.js"
+    "static/js/main.c8d9ecbf.js"
   ]
 }
