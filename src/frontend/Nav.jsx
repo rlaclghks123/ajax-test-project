@@ -50,8 +50,8 @@ function Nav() {
 
         sessionStorage.removeItem('loggedIn');
         console.log('hi', response);
-        navigate('/');
-        return window.location.reload();
+        window.location.reload();
+        return navigate('/');
       })
       .catch((error) => {
         alert(error.response.data.error);
