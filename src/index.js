@@ -11,6 +11,7 @@ import JoinWithXML from './frontend/Join/JoinWithXML.js';
 import Login from './frontend/Login.js';
 import Nav from './frontend/Nav.jsx';
 import KakaoMap from './frontend/KakaoMap.js';
+import NotFound from './frontend/NotFound.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,7 @@ root.render(
         <Route path="/login" element={<Login />} />
         <Route path="/kakaoMap" element={<KakaoMap />} />
         <Route path="/purchase/:id" element={<Purchase />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
