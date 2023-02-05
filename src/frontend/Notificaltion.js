@@ -30,7 +30,7 @@ function Notification() {
   const sessionId = sessionStorage.getItem('sessionId');
   return (
     <Wrapper>
-      <Link to="/">
+      <Link to="/ajax-test-project">
         <li>홈</li>
       </Link>
       <Link to={`/purchase/${sessionId}`}>
