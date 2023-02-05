@@ -74,7 +74,8 @@ function Purchase() {
       })
       .catch((error) => {
         alert(error.response.data.error);
-        return navigate('/');
+        navigate('/ajax-test-project');
+        return;
       });
   }, [navigate, sessionId, count]);
 
@@ -89,11 +90,13 @@ function Purchase() {
         if (response.status === 200) {
           alert(response.data.message);
         }
-        return navigate('/');
+        navigate('/ajax-test-project');
+        return;
       })
       .catch((error) => {
         alert(error.response.data.error);
-        return navigate('/');
+        navigate('/ajax-test-project');
+        return;
       });
   };
 

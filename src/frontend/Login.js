@@ -133,10 +133,14 @@ function Login() {
         console.log('hi', response);
         sessionStorage.setItem('loggedIn', response.data.loggedIn);
         sessionStorage.setItem('sessionId', response.data.sessionId);
-        return navigate('/ajax-test-project') && window.location.reload();
+        navigate('/ajax-test-project');
+        window.location.reload();
+        return;
       })
       .catch((error) => {
         alert(error.response.data.error);
+        navigate('/ajax-test-project');
+        return;
       });
   };
 

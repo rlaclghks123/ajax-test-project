@@ -54,11 +54,13 @@ function JoinWithAxios() {
       .then((response) => {
         console.log(response);
         alert(response.data.message);
-        return navigate('/ajax-test-project');
+        navigate('/ajax-test-project');
+        return;
       })
       .catch((error) => {
         alert(error.response.data.error);
-        return navigate('/ajax-test-project');
+        navigate('/ajax-test-project');
+        return;
       });
   };
 

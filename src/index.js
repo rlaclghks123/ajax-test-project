@@ -19,7 +19,6 @@ root.render(
     <BrowserRouter>
       <Reset />
       <Nav />
-      <Link to="/"></Link>
       <Routes>
         <Route path="/ajax-test-project" element={<Home />} />
         {/* <Route path="/join" element={<JoinWithXML />} /> 

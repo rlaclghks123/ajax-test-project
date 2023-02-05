@@ -50,11 +50,15 @@ function Nav() {
 
         sessionStorage.removeItem('loggedIn');
         console.log('hi', response);
-        return navigate('/ajax-test-project') && window.location.reload();
+        navigate('/ajax-test-project');
+        window.location.reload();
+        return;
       })
       .catch((error) => {
         alert(error.response.data.error);
-        console.log('error', error);
+        navigate('/ajax-test-project');
+        window.location.reload();
+        return;
       });
   };
   return (
