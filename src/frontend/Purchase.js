@@ -61,10 +61,12 @@ const Badge = styled.div`
 
 function Purchase() {
   const sessionId = sessionStorage.getItem('sessionId');
-  const [count, setCount] = useState(0);
-  const navigate = useNavigate();
   const loggedIn = sessionStorage.getItem('loggedIn');
+
+  const [count, setCount] = useState(0);
   const [grade, setGrade] = useState('#947766');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
