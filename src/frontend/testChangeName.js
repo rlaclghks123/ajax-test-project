@@ -1,2 +1,2 @@
-function testChangeName() {}
-export default testChangeName;
+function TestChangeName() {}
+export default TestChangeName;
