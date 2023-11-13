@@ -21,8 +21,6 @@ root.render(
       <Nav />
       <Routes>
         <Route path="/ajax-test-project" element={<Home />} />
-        {/* <Route path="/join" element={<JoinWithXML />} /> 
-        <Route path="/join" element={<JoinWithFetch />} />  */}
         <Route path="/join" element={<JoinWithAxios />} />
         <Route path="/login" element={<Login />} />
         <Route path="/kakaoMap" element={<KakaoMap />} />
